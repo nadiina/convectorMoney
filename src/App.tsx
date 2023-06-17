@@ -6,15 +6,23 @@ import {SelectCountry} from './components/SelectCountry'
 import {SwitchCurrency} from './components/SwitchCurrency'
 import { CurrencyContext } from './context/CurrencyContext'
 import "./App.css";
-
+interface CurrencyContextType {
+    fromCurrency: string;
+    setFromCurrency: (currency: string) => void;
+    toCurrency: string;
+    setToCurrency: (currency: string) => void;
+    firstAmount: number;
+}
 function App() {
+
     const {
         fromCurrency,
         setFromCurrency,
         toCurrency,
         setToCurrency,
         firstAmount,
-    } = useContext(CurrencyContext);
+        // @ts-ignore
+    } = useContext<CurrencyContextType>(CurrencyContext);
     const [resultCurrency, setResultCurrency] = useState(0);
     const codeFromCurrency = fromCurrency.split(" ")[1];
     const codeToCurrency = toCurrency.split(" ")[1];

@@ -1,29 +1,37 @@
-import {Button, Grid} from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
-import {useContext} from "react";
-import {CurrencyContext} from "../context/CurrencyContext.tsx";
+import { useContext } from "react";
+import { CurrencyContext } from "../context/CurrencyContext";
+
+interface CurrencyContextType {
+	fromCurrency: string;
+	setFromCurrency: (currency: string) => void;
+	toCurrency: string;
+	setToCurrency: (currency: string) => void;
+}
+
 export const SwitchCurrency = () => {
 	const {
 		fromCurrency,
 		setFromCurrency,
 		toCurrency,
 		setToCurrency,
-	} = useContext(CurrencyContext);
+		// @ts-ignore
+	} = useContext<CurrencyContextType>(CurrencyContext);
+
 	const handleSwitch = () => {
 		setFromCurrency(toCurrency);
 		setToCurrency(fromCurrency);
 	};
 
 	return (
-		<>
-			<Grid item xs={12} md="auto">
-				<Button onClick={handleSwitch} sx={{
-					borderRadius: 1,
-					height:"100%"
-				}}>
-					<CompareArrowsIcon sx={{ fontSize: 30 }}/>
-				</Button>
-			</Grid>
-		</>
-	)
-}
+		<Grid item xs={12} md="auto">
+			<Button onClick={handleSwitch} sx={{
+				borderRadius: 1,
+				height: "100%"
+			}}>
+				<CompareArrowsIcon sx={{ fontSize: 30 }} />
+			</Button>
+		</Grid>
+	);
+};
