@@ -10,6 +10,7 @@ import './index.css'
 import {CurrencyProvider} from "./context/CurrencyContext.tsx";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+    
     <React.StrictMode>
         <CurrencyProvider>
             <App/>

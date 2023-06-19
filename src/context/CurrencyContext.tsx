@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 type CurrencyContextType = {
 	fromCurrency: string;
@@ -11,10 +11,11 @@ type CurrencyContextType = {
 
 export const CurrencyContext = createContext<CurrencyContextType | null>(null);
 
+
 // @ts-ignore
 export const CurrencyProvider: React.FC = ({ children }) => {
 	const [fromCurrency, setFromCurrency] = useState("🇺🇸 USD - United States");
-	const [toCurrency, setToCurrency] = useState("🇦🇺 AUD - Australia");
+	const [toCurrency, setToCurrency] = useState("🇳🇱 EUR - Netherlands");
 	const [firstAmount, setFirstAmount] = useState("");
 
 	const value: CurrencyContextType = {

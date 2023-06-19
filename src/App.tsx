@@ -41,7 +41,6 @@ function App() {
         }
     }, [firstAmount, fromCurrency, toCurrency])
 
-
     return (
         <Container maxWidth="md" className="boxStyles">
             <Typography variant="h5" sx={{ marginBottom: "2rem" }}>
@@ -64,7 +63,7 @@ function App() {
                         {firstAmount} {fromCurrency} =
                     </Typography>
                     <Typography variant="h5" sx={{ marginTop: "5px", fontWeight: "bold" }}>
-                        {resultCurrency * parseFloat(firstAmount)} {toCurrency}
+                        {(firstAmount) * resultCurrency} {toCurrency}
                     </Typography>
                 </Box>
             )}
