@@ -8,9 +8,12 @@ interface CurrencyContextType {
 	setFromCurrency: (currency: string) => void;
 	toCurrency: string;
 	setToCurrency: (currency: string) => void;
+	firstAmount: number;
+	setFirstAmount: number;
 }
 
 export const SwitchCurrency = () => {
+
 	const {
 		fromCurrency,
 		setFromCurrency,

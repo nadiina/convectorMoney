@@ -12,6 +12,7 @@ type CurrencyContextType = {
 export const CurrencyContext = createContext<CurrencyContextType | null>(null);
 
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 export const CurrencyProvider: React.FC = ({ children }) => {
 	const [fromCurrency, setFromCurrency] = useState("🇺🇸 USD - United States");
